@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.microsamples.reactive</groupId>
+    <artifactId>reactive-tracks</artifactId>
+    <version>1.5.2</version>
+    <packaging>pom</packaging>
+    <name>multi</name>
+    <modules>
+        <module>client</module>
+        <module>service</module>
+        <module>service-idl</module>
+    </modules>
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <tracks.version>${project.version}</tracks.version>
+        <spring.boot.version>2.0.6.RELEASE</spring.boot.version>
+        <rsocket.rpc.version>0.2.10</rsocket.rpc.version>
+        <protobuf.version>3.6.1</protobuf.version>
+        <log4j2Version>2.9.0</log4j2Version>
+    </properties>
+    <repositories>
+        <repository>
+            <id>netifi-oss</id>
+            <url>https://dl.bintray.com/netifi/netifi-oss/</url>
+        </repository>
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+</project>

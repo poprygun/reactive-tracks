@@ -1,0 +1,7 @@
+---
+applications:
+- name: service
+  memory: 896M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  path: target/service-1.5.2.jar
+  health-check-type: process

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package io.microsamples.reactive.service;
+
+option java_package = "io.microsamples.reactive.service.protobuf";
+option java_outer_classname = "ServiceProto";
+option java_multiple_files = true;
+
+service TracksService {
+    rpc tracks (RecordsRequest) returns (stream Record) {}
+    rpc record (RecordsRequest) returns (Record) {}
+}
+
+message RecordsRequest {
+    int32 offset = 1;
+    int32 maxResults = 2;
+}
+
+message Record {
+    string id = 1;
+    double latitude = 2;
+    double longitude = 3;
+}
+
+

@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-reactive-service
+spec:
+  selector:
+    app: proteus
+  type: LoadBalancer
+  ports:
+    - name: my-proteus-port
+      port: 9000
+      targetPort: 9000
