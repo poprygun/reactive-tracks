@@ -10,11 +10,35 @@
         <version>1.5.2</version>
     </parent>
 
+    <properties>
+        <mapstruct.version>1.3.0.Beta2</mapstruct.version>
+    </properties>
+
     <artifactId>service-idl</artifactId>
     <name>service-idl</name>
-    <version>${parent.version}</version>
+    <version>${project.parent.version}</version>
     <packaging>jar</packaging>
     <dependencies>
+        <dependency>
+            <groupId>io.github.benas</groupId>
+            <artifactId>random-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.netifi.proteus</groupId>
             <artifactId>proteus-client</artifactId>
@@ -74,6 +98,18 @@
             </extension>
         </extensions>
         <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>

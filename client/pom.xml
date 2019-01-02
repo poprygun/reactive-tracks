@@ -11,14 +11,14 @@
 
     <artifactId>client</artifactId>
     <name>client</name>
-    <version>${parent.version}</version>
+    <version>${project.parent.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>io.microsamples.reactive</groupId>
             <artifactId>service-idl</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

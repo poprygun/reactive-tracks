@@ -8,6 +8,7 @@ option java_multiple_files = true;
 
 service TracksService {
     rpc tracks (RecordsRequest) returns (stream Record) {}
+    rpc altTracks (RecordsRequest) returns (stream AltRecord) {}
     rpc record (RecordsRequest) returns (Record) {}
 }
 
@@ -22,4 +23,7 @@ message Record {
     double longitude = 3;
 }
 
-
+message AltRecord {
+    string id = 1;
+    double altitude = 2;
+}

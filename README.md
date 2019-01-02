@@ -35,7 +35,7 @@ Follow the steps below to get a client and service communicating via Proteus in 
         '-Dnetifi.authentication.0.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY=' \
         '-Dnetifi.broker.admin.accessKey=9007199254740991' \
         '-Dnetifi.broker.admin.accessToken=kTBDVtfRBO4tHOnZzSyY5ym2kfY='" \
-        netifi/proteus:1.5.0 | tee proteus.log
+        netifi/proteus:1.5.0
 
 3. In a new terminal window, start the example quickstart service by running the following command:
 

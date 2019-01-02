@@ -15,29 +15,30 @@ import reactor.core.publisher.Mono;
 public class ClientRunner implements CommandLineRunner {
     private static final Logger logger = LogManager.getLogger(ClientRunner.class);
 
-    @Group("quickstart.services.helloservices")
-    private TracksServiceClient client;
+    @Group("track.service")
+    private TracksServiceClient trackService;
 
     private int counter = 1;
 
     @Override
     public void run(String... args) throws Exception {
-        RecordsRequest request = RecordsRequest.newBuilder().setMaxResults(213).build();
+        RecordsRequest request = RecordsRequest.newBuilder().setMaxResults(13).build();
 
-        client.tracks(request).subscribe(record -> processed(record));
+        trackService.tracks(request).subscribe(record -> processed(record));
 
         Thread.currentThread().join();
     }
 
     private void processed(Record record) {
-        counter = counter + 1;
-        logger.info("Processing record {}", counter);
+
+        logger.info("Processing record {} {}", counter, record);
+        counter++;
     }
 
     private void runMono(RecordsRequest request) {
         logger.info("Sending request to Tracks Service {}", request);
 
-        Mono<Record> record = client.record(request);
+        Mono<Record> record = trackService.record(request);
 
         logger.info("Received response {}", record.block());
     }

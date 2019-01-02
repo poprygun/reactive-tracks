@@ -21,6 +21,8 @@ buildNumber.properties
 # CMake
 cmake-build-debug/
 
+.factorypath
+
 ### Java ###
 # Compiled class file
 
